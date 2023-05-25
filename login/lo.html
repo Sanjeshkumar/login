@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+      }
+      
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        overflow: hidden;
+        margin: 0;
+      }
+      
+      .container {
+        width: 40%;
+        height: 40%;
+        background: #1c1c1c;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      .container input {
+        padding: 10px 20px;
+        margin-bottom: 20px;
+        width: 80%;
+        outline: none;
+      }
+      
+      .container button {
+        padding: 10px 20px;
+        border: none;
+        background: transparent;
+        background: crimson;
+        width: 150px;
+        color: #fff;
+        cursor: pointer;
+      }
+      
+      .background-image {
+        background-image: url("https://images8.alphacoders.com/601/thumb-1920-601705.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        position: absolute;
+        top: -20px;
+        bottom: -20px;
+        left: -20px;
+        right: -20px;
+        z-index: -1;
+        filter: blur(20px);
+      }
+      
+</style>
+<body>
+    <div class="background-image"></div>
+
+    <div class="container">
+        <input type="text" id="Name" placeholder="Enter Name" required/>
+        <input type="number" id="Mobile" placeholder="Enter mobile number" required/>
+        <input type="email" id="Email" placeholder="Enter Email" required/>
+      <input type="text" id="Movie" placeholder="fav movie name" required />
+      <button type="submit">Submit</button>
+    </div>
+</body>
+<script>
+    
+</script>
+</html>

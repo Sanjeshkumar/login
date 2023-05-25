@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        background-color: blanchedalmond;
+    }
+    .contact-right{
+        display: flex;
+    }
+    .form{
+        background-color: aqua;
+    }
+    .btnbtn2{
+padding: 10px 20px;
+    }
+    .sec{
+        display: inline;
+    }
+</style>
+<body>
+    <div class="contact-right">
+        <section class="sec">
+        <form name="submit-to-google-sheet" class="form">
+            <input type="text" name="Name" placeholder="Your Name" required>
+            <input type="email" name="Email" placeholder="Your Email" required>
+            <textarea name="Message" rows="6" placeholder="Your favorite movie"></textarea>
+            <input type="number" name="Mobile" placeholder="Ex:987654321">
+            <button type="submit" class="btnbtn2">Submit</button>
+        </form>
+    </section>
+        <span id="msg"></span>
+          </div>
+</body>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyT40Ht7idnFHGdtwvzpv4e9TP1vwlJ-JcL7vYnlJFVIjQR7c-xAXC2Qd-vn0PV5F75/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message sent successfully."
+            setTimeout(function(){
+                msh.innerHTML = ""
+            },5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+</html>
